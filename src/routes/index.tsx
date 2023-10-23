@@ -64,7 +64,7 @@ export default function IndexRoute() {
           </div>
         </section>
 
-        <section id="section-other">
+        <section className="py-20 px-10">
           <h2>Section Other</h2>
         </section>
       </main>
