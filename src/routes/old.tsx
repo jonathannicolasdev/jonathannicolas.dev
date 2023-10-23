@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import Bio from "./components/Bio";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
+import Navigation from "../components/Navigation";
+import Hero from "../components/Hero";
+import Bio from "../components/Bio";
+import Projects from "../components/Projects";
+import Footer from "../components/Footer";
+
+import "../styles/old.css";
 
 const Container = styled.div`
   width: 100%;
@@ -14,7 +16,7 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const App = () => {
+export default function OldWebsite() {
   return (
     <Container>
       <Navigation></Navigation>
@@ -24,6 +26,4 @@ const App = () => {
       <Footer></Footer>
     </Container>
   );
-};
-
-export default App;
+}
