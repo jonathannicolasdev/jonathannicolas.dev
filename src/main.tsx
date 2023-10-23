@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import OldWebsite from "./routes/old";
+
+import "./styles/tailwind.css";
 
 const router = createBrowserRouter([
   {

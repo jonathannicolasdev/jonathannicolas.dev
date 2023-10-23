@@ -6,8 +6,6 @@ import Bio from "../components/Bio";
 import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 
-import "../styles/old.css";
-
 const Container = styled.div`
   width: 100%;
   display: flex;
