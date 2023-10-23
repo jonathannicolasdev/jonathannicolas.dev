@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { ButtonLink } from "../components/ui/button-link";
+
 const navigationItems = [
   { to: "/about", text: "About" },
   { to: "/contact", text: "Contact" },
@@ -33,7 +35,7 @@ export default function IndexRoute() {
       </nav>
 
       <main className="flex-[1]">
-        <section className="justify-center flex flex-wrap gap-10 bg-indigo-500 py-20 px-10">
+        <section className="justify-center items-center flex flex-wrap gap-10 sm:gap-20 bg-indigo-500 py-20 px-10">
           <div className="hero-person flex flex-col gap-8 items-center">
             <img
               src="/images/avatar.jpg"
@@ -45,6 +47,10 @@ export default function IndexRoute() {
             <h1 className="text-2xl font-semibold max-w-sm text-center text-indigo-100">
               Hello, I'm Jonathan Nicolas, a web developer Contact Me
             </h1>
+            <div className="flex gap-4">
+              <ButtonLink to="/contact">Contact Me</ButtonLink>
+              <ButtonLink to="/projects">Check My Projects</ButtonLink>
+            </div>
           </div>
 
           <div>
