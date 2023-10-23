@@ -8,8 +8,11 @@ const navigationItems = [
 ];
 
 export default function IndexRoute() {
+  const date = new Date();
+  const year = date.getFullYear();
+
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <nav className="flex justify-between gap-2 p-4 shadow-md">
         <span className="text-2xl">Jonathan Nicolas</span>
 
@@ -29,13 +32,23 @@ export default function IndexRoute() {
         </ul>
       </nav>
 
-      <main>
-        <section>
+      <main className="flex-[1]">
+        <section id="section-hero">
           <h1>Hello, I'm Jonathan Nicolas, a web developer Contact Me</h1>
+        </section>
+
+        <section id="section-other">
+          <h2>Section Other</h2>
         </section>
       </main>
 
-      <footer>Footer</footer>
+      <footer className="p-4">
+        <div className="flex justify-center">
+          <p className="text-slate-500">
+            Copyright &copy; {year} Jonathan Nicolas
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
