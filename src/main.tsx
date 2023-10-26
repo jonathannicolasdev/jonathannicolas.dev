@@ -6,10 +6,12 @@ import OldWebsite from "./routes/old";
 
 import "./styles/tailwind.css";
 import IndexRoute from "./routes/index";
+import CVRoute from "./routes/cv";
 
 const router = createBrowserRouter([
   { path: "/", element: <IndexRoute /> },
   { path: "/old", element: <OldWebsite /> },
+  { path: "/cv", element: <CVRoute /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
