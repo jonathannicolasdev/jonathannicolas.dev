@@ -6,8 +6,25 @@ export default function CVRoute() {
       <div className="mx-auto max-w-5xl p-4">
         <main className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <section className="col-span-1 md:col-span-1 space-y-8">
-            <div className="card">
-              <h1>Name</h1>
+            <div className="shadow bg-white rounded-xl overflow-hidden">
+              <div
+                className="h-32 bg-cover"
+                style={{
+                  backgroundImage: "url('/images/cv-cover.jpeg')",
+                }}
+              ></div>
+
+              <div className="pt-12 p-8 space-y-4 relative">
+                <img
+                  src="/images/avatar.jpg"
+                  alt="Avatar"
+                  className="rounded-full absolute -top-10 shadow border-2 border-white border-solid"
+                  width={80}
+                  height={80}
+                />
+                <h1 className="card-title">Jonathan Nicolas</h1>
+                <p className="text-stone-500 text-sm">Web Developer</p>
+              </div>
             </div>
 
             <div className="card">
@@ -32,7 +49,7 @@ export default function CVRoute() {
               <p>
                 <a
                   href="mailto:jonathannicolas.dev@gmail.com"
-                  className="text-green-800 font-semibold"
+                  className="text-teal-700 font-semibold"
                 >
                   jonathannicolas.dev@gmail.com
                 </a>
