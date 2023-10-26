@@ -1,5 +1,7 @@
 import { Icon } from "@iconify/react";
 
+import { ButtonAnchor } from "../components/ui/button-anchor";
+
 export default function CVRoute() {
   return (
     <div className="bg-slate-200 min-h-screen">
@@ -24,6 +26,17 @@ export default function CVRoute() {
                 />
                 <h1 className="card-title">Jonathan Nicolas</h1>
                 <p className="text-stone-500 text-sm">Web Developer</p>
+                <div className="flex flex-col">
+                  <ButtonAnchor
+                    href="https://example.com/pdf"
+                    className="text-center"
+                  >
+                    <span className="inline-flex gap-2 items-center">
+                      <Icon icon="tabler:download" className="text-xl" />
+                      Download CV
+                    </span>
+                  </ButtonAnchor>
+                </div>
               </div>
             </div>
 
