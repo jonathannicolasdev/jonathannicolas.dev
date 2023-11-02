@@ -160,7 +160,9 @@ function SectionProjects() {
               <img
                 src={project.imageURL}
                 alt={project.title}
-                className="rounded"
+                className="rounded object-cover h-[280px] object-top"
+                width={448}
+                height={280}
               />
               <h3 className="text-2xl font-bold">{project.title}</h3>
               <p className="text-lg">{project.description}</p>
