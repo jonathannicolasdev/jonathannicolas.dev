@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { ButtonLink } from "../components/ui/button-link";
+import { Anchor } from "../components/ui/anchor";
 
 const navigationItems = [
   { to: "/about", text: "About" },
@@ -64,9 +65,7 @@ export default function IndexRoute() {
           </div>
         </section>
 
-        <section className="py-20 px-10">
-          <h2>Section Other</h2>
-        </section>
+        <SectionProjects />
       </main>
 
       <footer className="p-4">
@@ -77,5 +76,47 @@ export default function IndexRoute() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function SectionProjects() {
+  const projects = [
+    {
+      imageURL: "/projects/superdupergallery.jpg",
+      title: "Super Duper Gallery",
+      description:
+        "Website of contemporary art gallery based in 🇵🇭 QC, Philippines for super duper interesting artworks.",
+      url: "https://superdupergallery.com",
+    },
+    {
+      imageURL: "/projects/sancayaindonesia.jpg",
+      title: "Sancaya Indonesia",
+      description: "Inclusive learning center for children.",
+      url: "https://sancayaindonesia.com",
+    },
+    {
+      imageURL: "/projects/nawaart.jpg",
+      title: "Nawaart",
+      description: "Website of Myanmar art gallery.",
+      url: "https://github.com/jonathannicolasdev",
+    },
+  ];
+
+  return (
+    <section className="py-20 px-10">
+      <h2>Projects</h2>
+
+      <ul>
+        {projects.map((project) => {
+          return (
+            <li key={project.title}>
+              <img src={project.imageURL} alt={project.title} />
+              <h3>{project.title}</h3>
+              <Anchor href={project.url}>Visit Project</Anchor>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
