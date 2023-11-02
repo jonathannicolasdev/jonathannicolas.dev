@@ -103,16 +103,24 @@ function SectionProjects() {
   ];
 
   return (
-    <section className="py-20 px-10">
-      <h2>Projects</h2>
+    <section className="py-20 px-10 space-y-16 mx-auto max-w-5xl w-full">
+      <h2 className="text-4xl font-bold">Projects</h2>
 
-      <ul>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {projects.map((project) => {
           return (
-            <li key={project.title}>
+            <li key={project.title} className="space-y-4">
               <img src={project.imageURL} alt={project.title} />
-              <h3>{project.title}</h3>
-              <Anchor href={project.url}>Visit Project</Anchor>
+              <h3 className="text-2xl font-bold">{project.title}</h3>
+              <p>{project.description}</p>
+              <p>
+                <Anchor
+                  href={project.url}
+                  className="font-bold text-indigo-600"
+                >
+                  Visit Project
+                </Anchor>
+              </p>
             </li>
           );
         })}
