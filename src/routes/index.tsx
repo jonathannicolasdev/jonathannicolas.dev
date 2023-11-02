@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { ButtonLink } from "../components/ui/button-link";
-import { Anchor } from "../components/ui/anchor";
+import { ButtonAnchor } from "../components/ui/button-anchor";
 
 const navigationItems = [
   { to: "/about", text: "About" },
@@ -80,25 +80,71 @@ export default function IndexRoute() {
 }
 
 function SectionProjects() {
-  const projects = [
+  const projects: {
+    url: string;
+    imageURL: string;
+    title: string;
+    description: string;
+    technologies?: string[];
+  }[] = [
     {
+      url: "https://superdupergallery.com",
       imageURL: "/projects/superdupergallery.jpg",
       title: "Super Duper Gallery",
       description:
         "Website of contemporary art gallery based in 🇵🇭 QC, Philippines for super duper interesting artworks.",
-      url: "https://superdupergallery.com",
+      technologies: [
+        "TypeScript",
+        "React",
+        "Tailwind CSS",
+        "Remix",
+        "Prisma ORM",
+        "MySQL on PlanetScale",
+        "Vercel",
+      ],
     },
     {
+      url: "https://sancayaindonesia.com",
       imageURL: "/projects/sancayaindonesia.jpg",
       title: "Sancaya Indonesia",
       description: "Inclusive learning center for children.",
-      url: "https://sancayaindonesia.com",
+      technologies: [
+        "WordPress",
+        "jQuery",
+        "MySQL",
+        "Apache HTTP Server",
+        "Rumahweb VPS",
+      ],
     },
     {
+      url: "https://github.com/jonathannicolasdev/nawaart",
       imageURL: "/projects/nawaart.jpg",
       title: "Nawaart",
       description: "Website of Myanmar art gallery.",
-      url: "https://github.com/jonathannicolasdev",
+      technologies: [
+        "React",
+        "React Router",
+        "Styled Components",
+        "Redux",
+        "Mongoose",
+        "MongoDB",
+        "Netlify",
+      ],
+    },
+    {
+      url: "https://github.com/jonathannicolasdev/sneakergram-client",
+      imageURL: "/projects/sneakergram.jpg",
+      title: "Sneakergram",
+      description: "Sneaker social media like Instagram",
+      technologies: [
+        "React",
+        "React Router",
+        "Styled Components",
+        "Redux",
+        "Mongoose",
+        "MongoDB",
+        "Netlify",
+      ],
     },
   ];
 
@@ -106,20 +152,31 @@ function SectionProjects() {
     <section className="py-20 px-10 space-y-16 mx-auto max-w-5xl w-full">
       <h2 className="text-4xl font-bold">Projects</h2>
 
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-12">
         {projects.map((project) => {
           return (
             <li key={project.title} className="space-y-4">
-              <img src={project.imageURL} alt={project.title} />
+              <img
+                src={project.imageURL}
+                alt={project.title}
+                className="rounded"
+              />
               <h3 className="text-2xl font-bold">{project.title}</h3>
-              <p>{project.description}</p>
+              <p className="text-lg">{project.description}</p>
+              {Array.isArray(project.technologies) && (
+                <ul className="flex flex-wrap gap-4">
+                  {project.technologies.map((technology) => (
+                    <li key={technology}>{technology}</li>
+                  ))}
+                </ul>
+              )}
               <p>
-                <Anchor
+                <ButtonAnchor
                   href={project.url}
                   className="font-bold text-indigo-600"
                 >
                   Visit Project
-                </Anchor>
+                </ButtonAnchor>
               </p>
             </li>
           );
