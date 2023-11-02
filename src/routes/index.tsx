@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 import { ButtonLink } from "../components/ui/button-link";
 import { ButtonAnchor } from "../components/ui/button-anchor";
@@ -85,7 +86,7 @@ function SectionProjects() {
     imageURL: string;
     title: string;
     description: string;
-    technologies?: string[];
+    technologies?: { name: string; icon: string }[];
   }[] = [
     {
       url: "https://superdupergallery.com",
@@ -94,13 +95,13 @@ function SectionProjects() {
       description:
         "Website of contemporary art gallery based in 🇵🇭 QC, Philippines for super duper interesting artworks.",
       technologies: [
-        "TypeScript",
-        "React",
-        "Tailwind CSS",
-        "Remix",
-        "Prisma ORM",
-        "MySQL on PlanetScale",
-        "Vercel",
+        { name: "TypeScript", icon: "logos:typescript-icon" },
+        { name: "React", icon: "logos:react" },
+        { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
+        { name: "Remix", icon: "logos:remix-icon" },
+        { name: "Prisma ORM", icon: "logos:prisma" },
+        { name: "MySQL on PlanetScale", icon: "logos:mysql-icon" },
+        { name: "Vercel", icon: "logos:vercel-icon" },
       ],
     },
     {
@@ -109,11 +110,11 @@ function SectionProjects() {
       title: "Sancaya Indonesia",
       description: "Inclusive learning center for children.",
       technologies: [
-        "WordPress",
-        "jQuery",
-        "MySQL",
-        "Apache HTTP Server",
-        "Rumahweb VPS",
+        { name: "WordPress", icon: "logos:wordpress-icon" },
+        { name: "", icon: "logos:jquery" },
+        { name: "MySQL", icon: "logos:mysql-icon" },
+        { name: "Apache HTTP Server", icon: "logos:apache" },
+        { name: "Rumahweb VPS", icon: "logos:serverless" },
       ],
     },
     {
@@ -122,13 +123,13 @@ function SectionProjects() {
       title: "Nawaart",
       description: "Website of Myanmar art gallery.",
       technologies: [
-        "React",
-        "React Router",
-        "Styled Components",
-        "Redux",
-        "Mongoose",
-        "MongoDB",
-        "Netlify",
+        { name: "React", icon: "logos:react" },
+        { name: "React Router", icon: "logos:react-router" },
+        { name: "Styled Components", icon: "noto:nail-polish" },
+        { name: "Redux", icon: "logos:redux" },
+        { name: "Mongoose ORM", icon: "noto:open-book" },
+        { name: "MongoDB", icon: "logos:mongodb-icon" },
+        { name: "Netlify", icon: "logos:netlify-icon" },
       ],
     },
     {
@@ -137,13 +138,13 @@ function SectionProjects() {
       title: "Sneakergram",
       description: "Sneaker social media like Instagram",
       technologies: [
-        "React",
-        "React Router",
-        "Styled Components",
-        "Redux",
-        "Mongoose",
-        "MongoDB",
-        "Netlify",
+        { name: "React", icon: "logos:react" },
+        { name: "React Router", icon: "logos:react-router" },
+        { name: "Styled Components", icon: "noto:nail-polish" },
+        { name: "Redux", icon: "logos:redux" },
+        { name: "Mongoose ORM", icon: "noto:open-book" },
+        { name: "MongoDB", icon: "logos:mongodb-icon" },
+        { name: "Netlify", icon: "logos:netlify-icon" },
       ],
     },
   ];
@@ -166,7 +167,13 @@ function SectionProjects() {
               {Array.isArray(project.technologies) && (
                 <ul className="flex flex-wrap gap-4">
                   {project.technologies.map((technology) => (
-                    <li key={technology}>{technology}</li>
+                    <li
+                      key={technology.name}
+                      className="flex gap-2 items-center"
+                    >
+                      <Icon icon={technology.icon}></Icon>
+                      <span>{technology.name}</span>
+                    </li>
                   ))}
                 </ul>
               )}
