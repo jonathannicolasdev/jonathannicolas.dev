@@ -1,10 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
 
 const navigationItems = [
+  { to: "/cv", text: "CV" },
   { to: "/about", text: "About" },
   { to: "/contact", text: "Contact" },
   { to: "/projects", text: "Projects" },
-  { to: "/cv", text: "CV" },
 ];
 
 export default function RootLayoutRoute() {
