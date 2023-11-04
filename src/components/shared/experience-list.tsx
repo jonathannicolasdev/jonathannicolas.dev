@@ -20,7 +20,7 @@ export function ExperienceList() {
             <li key={jobTitle + companyName} className="space-y-4">
               <div className="space-y-2">
                 <h3 className="text-xl">{jobTitle}</h3>
-                <div className="flex justify-between gap-4 text-stone-400">
+                <div className="text-sm lg:text-base flex flex-wrap justify-between gap-2 lg:gap-4 text-stone-400">
                   <div className="flex gap-4">
                     <span className="icon-text">
                       <Icon icon="tabler:briefcase" /> {companyName}
@@ -34,16 +34,17 @@ export function ExperienceList() {
                   </div>
                 </div>
               </div>
-
-              <ul className="list-inside list-disc space-y-2 text-sm">
-                {jobItems.map((jobItem) => {
-                  return (
-                    <li key={jobItem}>
-                      <p>{jobItem}</p>
-                    </li>
-                  );
-                })}
-              </ul>
+              <div className="prose prose-stone prose-ul:text-sm">
+                <ul>
+                  {jobItems.map((jobItem) => {
+                    return (
+                      <li key={jobItem}>
+                        <p>{jobItem}</p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </li>
           );
         })}
