@@ -9,4 +9,7 @@
   .card-title {
     @apply font-semibold text-xl;
   }
+  .icon-text {
+    @apply inline-flex items-center gap-2;
+  }
 }

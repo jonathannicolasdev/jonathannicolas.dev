@@ -1,3 +1,5 @@
+import { Icon } from "@iconify/react";
+
 export function ExperienceList() {
   const experiences = [
     {
@@ -31,17 +33,20 @@ export function ExperienceList() {
                 <h3 className="text-xl">{jobTitle}</h3>
                 <div className="flex justify-between gap-4 text-stone-400">
                   <div className="flex gap-4">
-                    <span>{companyName}</span>
-                    <span>{location}</span>
+                    <span className="icon-text">
+                      <Icon icon="tabler:briefcase" /> {companyName}
+                    </span>
+                    <span className="icon-text">
+                      <Icon icon="tabler:map-pin" /> {location}
+                    </span>
                   </div>
-                  <div className="flex gap-4">
-                    <span>{dateStart}</span>
-                    <span>{dateEnd}</span>
+                  <div className="icon-text">
+                    <Icon icon="tabler:calendar" /> {dateStart} — {dateEnd}
                   </div>
                 </div>
               </div>
 
-              <ul className="list-item">
+              <ul className="list-inside list-disc">
                 {jobItems.map((jobItem) => {
                   return (
                     <li key={jobItem}>
