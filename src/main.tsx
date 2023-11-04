@@ -2,16 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import RootLayoutRoute from "./routes/root";
+import IndexRoute from "./routes/index";
+import CVRoute from "./routes/cv";
 import OldWebsite from "./routes/old";
 
 import "./styles/tailwind.css";
-import IndexRoute from "./routes/index";
-import CVRoute from "./routes/cv";
 
 const router = createBrowserRouter([
-  { path: "/", element: <IndexRoute /> },
+  {
+    path: "/",
+    element: <RootLayoutRoute />,
+    children: [
+      { path: "/", element: <IndexRoute /> },
+      { path: "/cv", element: <CVRoute /> },
+    ],
+  },
+
   { path: "/old", element: <OldWebsite /> },
-  { path: "/cv", element: <CVRoute /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
