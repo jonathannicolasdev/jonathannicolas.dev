@@ -1,23 +1,12 @@
 import { Icon } from "@iconify/react";
 
-export function ExperienceList() {
-  const experiences = [
-    {
-      jobTitle: "Coding Instructor",
-      companyName: "Under the GUI",
-      dateStart: "2020",
-      dateEnd: "2021",
-      location: "Vancouver, Canada",
-      jobItems: [
-        "Programming and game development for kids and teens, fostering their creativity and passion for technology",
-      ],
-    },
-  ];
+import { dataExperiences } from "../../data/experiences";
 
+export function ExperienceList() {
   return (
-    <div className="card space-y-4">
-      <ul>
-        {experiences.map((experience) => {
+    <div className="card">
+      <ul className="space-y-8">
+        {dataExperiences.map((experience) => {
           const {
             jobTitle,
             companyName,
@@ -46,7 +35,7 @@ export function ExperienceList() {
                 </div>
               </div>
 
-              <ul className="list-inside list-disc">
+              <ul className="list-inside list-disc space-y-2 text-sm">
                 {jobItems.map((jobItem) => {
                   return (
                     <li key={jobItem}>
