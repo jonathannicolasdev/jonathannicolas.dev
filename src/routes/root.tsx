@@ -38,7 +38,7 @@ export default function RootLayoutRoute() {
         <Outlet></Outlet>
       </main>
 
-      <footer className="p-4">
+      <footer className="p-4 mt-40">
         <div className="flex justify-center">
           <p className="text-slate-500">
             Copyright &copy; {year} Jonathan Nicolas
