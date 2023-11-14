@@ -1,6 +1,6 @@
 export default function AboutRoute() {
   return (
-    <div className="pt-10 mx-auto max-w-3xl space-y-10">
+    <div className="site-container">
       <section className="space-y-4">
         <img
           src="/images/about-quebec.jpeg"
@@ -8,7 +8,9 @@ export default function AboutRoute() {
           height={300}
           className="h-80 w-full object-cover object-top rounded-md"
         />
-        <h1 className="text-5xl font-semibold">About Jonathan Nicolas</h1>
+        <h1 className="text-3xl sm:text-5xl font-semibold">
+          About Jonathan Nicolas
+        </h1>
         <h2 className="text-xl font-semibold">
           Short highlights how Jonathan went with his life.
         </h2>

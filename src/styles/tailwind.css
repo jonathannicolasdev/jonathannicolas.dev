@@ -12,4 +12,7 @@
   .icon-text {
     @apply inline-flex items-center gap-2;
   }
+  .site-container {
+    @apply pt-10 mx-auto max-w-3xl space-y-10 px-4;
+  }
 }
