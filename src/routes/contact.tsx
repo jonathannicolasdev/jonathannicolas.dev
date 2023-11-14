@@ -52,6 +52,17 @@ export default function ContactRoute() {
           </ul>
         )}
       </section>
+
+      <section>
+        <iframe
+          height="577"
+          title="Embedded Wufoo Form"
+          allowTransparency={true}
+          style={{ width: "100%", border: "none" }}
+          sandbox="allow-popups-to-escape-sandbox allow-top-navigation allow-scripts allow-popups allow-forms allow-same-origin"
+          src="https://jonathannicolasdev.wufoo.com/embed/zdlofmk1lh1boc/"
+        ></iframe>
+      </section>
     </div>
   );
 }
